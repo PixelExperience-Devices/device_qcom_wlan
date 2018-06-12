@@ -1,6 +1,9 @@
 WLAN_CHIPSET := qca_cld3
 PRODUCT_PACKAGES += $(WLAN_CHIPSET)_wlan.ko
 
+#Enable WIFI AWARE FEATURE
+WIFI_HIDL_FEATURE_AWARE := true
+
 PRODUCT_COPY_FILES += \
     device/qcom/wlan/msmnile/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
 				device/qcom/wlan/msmnile/wifi_concurrency_cfg.txt:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wifi_concurrency_cfg.txt \
