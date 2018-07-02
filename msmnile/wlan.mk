@@ -12,3 +12,6 @@ PRODUCT_COPY_FILES += \
 
 # Enable STA + SAP Concurrency.
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
+
+# Enable SAP + SAP Feature.
+QC_WIFI_HIDL_FEATURE_DUAL_AP := true
