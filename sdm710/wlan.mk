@@ -14,8 +14,7 @@ PRODUCT_COPY_FILES += \
 	device/qcom/wlan/sdm710/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
 	device/qcom/wlan/sdm710/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
 	device/qcom/wlan/sdm710/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
-	device/qcom/wlan/sdm710/icm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/icm.conf \
-	frameworks/native/data/etc/android.hardware.wifi.aware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.aware.xml
+	device/qcom/wlan/sdm710/icm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/icm.conf
 
 # WLAN specific aosp flag
 TARGET_USES_AOSP_FOR_WLAN := false
