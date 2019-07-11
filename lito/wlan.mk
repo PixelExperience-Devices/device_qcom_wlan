@@ -14,7 +14,9 @@ PRODUCT_COPY_FILES += \
 	device/qcom/wlan/lito/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
 	device/qcom/wlan/lito/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
 	device/qcom/wlan/lito/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
-	device/qcom/wlan/lito/icm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/icm.conf
+	device/qcom/wlan/lito/icm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/icm.conf \
+        frameworks/native/data/etc/android.hardware.wifi.passpoint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.passpoint.xml
+
 #	frameworks/native/lito/etc/android.hardware.wifi.aware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.aware.xml \
 	frameworks/native/lito/etc/android.hardware.wifi.rtt.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.rtt.xml
 
