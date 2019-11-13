@@ -39,8 +39,9 @@ PRODUCT_COPY_FILES += \
 endif
 
 ifeq ($(TARGET_USES_AOSP_FOR_WLAN), true)
-# AOSP: Use pre-defined interface combinations with STA+SAP support
+# Pure AOSP: Use pre-defined interface combinations with STA+SAP support
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 else
-# Value-added: TBD
+# Value-added AOSP: STA + SAP + P2P or NAN
+WIFI_HAL_INTERFACE_COMBINATIONS := {{{STA}, 1}, {{AP}, 1}, {{P2P, NAN}, 1}}
 endif
