@@ -47,3 +47,10 @@ else
 # Value-added AOSP: STA + SAP + P2P or NAN
 WIFI_HAL_INTERFACE_COMBINATIONS := {{{STA}, 1}, {{AP}, 1}, {{P2P, NAN}, 1}}
 endif
+
+# Override WLAN configurations
+# # Usage:
+# # To disable WLAN_CFG_1/WLAN_CFG_3 and enable WLAN_CFG_2 for <wlan_chip>
+# # (<wlan_chip> is from $TARGET_WLAN_CHIP).
+# #   WLAN_CFG_OVERRIDE_<wlan_chip> := WLAN_CFG_1=n WLAN_CFG_2=y WLAN_CFG_3=n
+WLAN_CFG_OVERRIDE_qcn7605 := CONFIG_IPA_OFFLOAD=y
