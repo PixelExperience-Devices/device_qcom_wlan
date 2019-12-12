@@ -24,7 +24,14 @@ LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/hostapd
 LOCAL_SRC_FILES    := hostapd.deny
 include $(BUILD_PREBUILT)
 
-# create symbolic links for INI file
-$(shell mkdir -p $(TARGET_OUT_VENDOR)/firmware/wlan/qca_cld; \
-ln -sf /vendor/etc/wifi/WCNSS_qcom_cfg.ini \
-$(TARGET_OUT_VENDOR)/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini)
+#create symbolic links for INI file
+$(shell mkdir -p $(TARGET_OUT_VENDOR)/firmware/wlan/qca_cld;)
+
+ifeq ($(GENERIC_ODM_IMAGE),true)
+    $(shell mkdir -p $(TARGET_OUT_ODM)/firmware/wlan/qca_cld;\
+    ln -sf /odm/etc/wifi/WCNSS_qcom_cfg.ini \
+    $(TARGET_OUT_ODM)/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini)
+else
+    $(shell ln -sf /vendor/etc/wifi/WCNSS_qcom_cfg.ini \
+    $(TARGET_OUT_VENDOR)/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini)
+endif
