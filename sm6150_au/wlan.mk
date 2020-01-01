@@ -6,13 +6,11 @@ PRODUCT_PACKAGES += \
 	wificond \
 	wifilogd
 
-#PRODUCT_COPY_FILES += \
-#	device/qcom/wlan/sm6150_au/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
-#	device/qcom/wlan/sm6150_au/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+PRODUCT_COPY_FILES += \
+	frameworks/native/data/etc/android.hardware.wifi.aware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.aware.xml \
+	frameworks/native/data/etc/android.hardware.wifi.rtt.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.rtt.xml \
+	frameworks/native/data/etc/android.hardware.wifi.passpoint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.passpoint.xml
 
-# Enable STA+SAP+P2P
-#WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
-#QC_WIFI_HIDL_FEATURE_STA_SAP_P2P := true
 
 ######## For multiple ko support ########
 
@@ -43,6 +41,7 @@ endif
 ifeq ($(TARGET_USES_AOSP_FOR_WLAN), true)
 # Pure AOSP: Use pre-defined interface combinations with STA+SAP support
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
+WIFI_HIDL_FEATURE_AWARE := true
 else
 # Value-added AOSP: STA + SAP + P2P or NAN
 WIFI_HAL_INTERFACE_COMBINATIONS := {{{STA}, 1}, {{AP}, 1}, {{P2P, NAN}, 1}}
