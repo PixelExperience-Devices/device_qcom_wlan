@@ -1,9 +1,11 @@
+# Add supported chips for autodetection
+TARGET_WLAN_CHIP := qca6490 qca6390
+
 WLAN_CHIPSET := qca_cld3
 
 #WPA
 WPA := wpa_cli
 
-PRODUCT_PACKAGES += $(WLAN_CHIPSET)_wlan.ko
 PRODUCT_PACKAGES += wifilearner
 PRODUCT_PACKAGES += $(WPA)
 
@@ -27,3 +29,31 @@ QC_WIFI_HIDL_FEATURE_DUAL_AP := true
 # Enable vendor properties.
 PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.aware.interface=wifi-aware0
+
+######## For multiple ko support ########
+
+# WLAN driver configuration file
+ifeq ($(strip $(shell expr $(words $(strip $(TARGET_WLAN_CHIP))) \>= 2)), 1)
+PRODUCT_COPY_FILES += \
+		      $(foreach chip, $(TARGET_WLAN_CHIP), \
+		      device/qcom/wlan/kona/WCNSS_qcom_cfg_$(chip).ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/$(chip)/WCNSS_qcom_cfg.ini)
+else
+TARGET_WLAN_CHIP := wlan
+PRODUCT_COPY_FILES += \
+		      device/qcom/wlan/kona/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
+endif
+
+
+PRODUCT_PACKAGES += $(foreach chip, $(TARGET_WLAN_CHIP), $(WLAN_CHIPSET)_$(chip).ko)
+
+# Override WLAN configurations
+# Usage:
+# To disable WLAN_CFG_1/WLAN_CFG_3 and enable WLAN_CFG_2 for <wlan_chip>
+# (<wlan_chip> is from $TARGET_WLAN_CHIP).
+#  WLAN_CFG_OVERRIDE_<wlan_chip> := WLAN_CFG_1=n WLAN_CFG_2=y WLAN_CFG_3=n
+
+WLAN_CFG_OVERRIDE_qca6390 := CONFIG_CNSS_QCA6390=y
+WLAN_CFG_OVERRIDE_qca6490 := CONFIG_CNSS_QCA6490=y
+
+# Use default_config for all chips. Used with TARGET_WLAN_CHIP.
+WLAN_CFG_USE_DEFAULT := true
