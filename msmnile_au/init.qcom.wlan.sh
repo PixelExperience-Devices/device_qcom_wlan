@@ -44,6 +44,8 @@ if [ ! -f /vendor/lib/modules/qca_cld3_wlan.ko ]; then
 		setprop ro.vendor.wlan.apf false
 		setprop ro.vendor.wlan.11ax false
 		setprop ro.vendor.wlan.aware false
+	elif lspci -k |grep cnss_pci|grep ":1103";then
+		setprop ro.vendor.wlan.chip qca6490
 	fi
 else
 	setprop ro.vendor.wlan.chip wlan
