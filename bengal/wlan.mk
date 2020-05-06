@@ -29,3 +29,7 @@ QC_WIFI_HIDL_FEATURE_DUAL_AP := true
 
 #Enable cal delete feature
 TARGET_CAL_DATA_CLEAR := true
+
+# Enable vendor properties.
+PRODUCT_PROPERTY_OVERRIDES += \
+	wifi.aware.interface=wifi-aware0

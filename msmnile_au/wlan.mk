@@ -45,3 +45,7 @@ else
 # Value-added AOSP: STA + SAP + P2P or NAN
 WIFI_HAL_INTERFACE_COMBINATIONS := {{{STA}, 1}, {{AP}, 1}, {{P2P, NAN}, 1}}
 endif
+
+# Enable vendor properties.
+PRODUCT_PROPERTY_OVERRIDES += \
+	wifi.aware.interface=wifi-aware0
