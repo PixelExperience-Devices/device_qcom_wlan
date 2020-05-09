@@ -54,3 +54,7 @@ endif
 # # (<wlan_chip> is from $TARGET_WLAN_CHIP).
 # #   WLAN_CFG_OVERRIDE_<wlan_chip> := WLAN_CFG_1=n WLAN_CFG_2=y WLAN_CFG_3=n
 WLAN_CFG_OVERRIDE_qcn7605 := CONFIG_IPA_OFFLOAD=y
+
+# Enable vendor properties.
+PRODUCT_PROPERTY_OVERRIDES += \
+	wifi.aware.interface=wifi-aware0
