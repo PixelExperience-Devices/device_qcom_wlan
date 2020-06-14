@@ -28,3 +28,6 @@ QC_WIFI_HIDL_FEATURE_DUAL_AP := true
 # Enable vendor properties.
 PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.aware.interface=wifi-aware0
+
+# Enable STA + STA Feature.
+QC_WIFI_HIDL_FEATURE_DUAL_STA := true
