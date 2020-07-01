@@ -57,3 +57,11 @@ WLAN_CFG_OVERRIDE_qca6490 := CONFIG_CNSS_QCA6490=y
 
 # Use default_config for all chips. Used with TARGET_WLAN_CHIP.
 WLAN_CFG_USE_DEFAULT := true
+
+# Inject Kbuild options per chip
+#
+# Select proper chip configuration for building WLAN driver module. Currently
+# driver supports only one chip configuration per build.
+#
+WLAN_KBUILD_OPTIONS_qca6390 := CONFIG_CNSS_QCA6390=y
+WLAN_KBUILD_OPTIONS_qca6490 := CONFIG_CNSS_QCA6490=y
