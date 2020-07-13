@@ -42,6 +42,7 @@ ifeq ($(TARGET_USES_AOSP_FOR_WLAN), true)
 # Pure AOSP: Use pre-defined interface combinations with STA+SAP support
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 else
-# Value-added AOSP: STA + SAP + P2P or NAN
-WIFI_HAL_INTERFACE_COMBINATIONS := {{{STA}, 1}, {{AP}, 1}, {{P2P, NAN}, 1}}
+# Value-added AOSP: STA + SAP + P2P or STA + P2P/NAN
+WIFI_HAL_INTERFACE_COMBINATIONS := {{{STA}, 1}, {{AP}, 1}, {{P2P}, 1}},\
+	                               {{{STA}, 1}, {{P2P, NAN}, 1}}
 endif
