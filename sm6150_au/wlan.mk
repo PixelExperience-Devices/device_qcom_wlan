@@ -33,9 +33,9 @@ PRODUCT_PACKAGES += $(foreach chip, $(TARGET_WLAN_CHIP), $(WLAN_CHIPSET)_$(chip)
 ifeq ($(PRODUCT_WLAN_DRIVER_ALWAYS_LOADED), true)
 # this script will set the property 'ro.vendor.wlan.chip' when boot completed,
 # which will trigger wlan driver loading.
-PRODUCT_PACKAGES += init.qti.wlan.sh
+PRODUCT_PACKAGES += init.qcom.wlan.sh
 PRODUCT_COPY_FILES += \
-    device/qcom/wlan/sm6150_au/init.qti.wlan.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.wlan.sh
+    device/qcom/wlan/sm6150_au/init.qcom.wlan.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.wlan.sh
 endif
 
 ifeq ($(TARGET_USES_AOSP_FOR_WLAN), true)
