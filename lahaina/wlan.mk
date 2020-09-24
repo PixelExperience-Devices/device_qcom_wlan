@@ -33,3 +33,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Enable STA + STA Feature.
 QC_WIFI_HIDL_FEATURE_DUAL_STA := true
+
+#Disable DMS MAC address feature in cnss-daemon
+TARGET_USES_NO_DMS_QMI_CLINET := true
