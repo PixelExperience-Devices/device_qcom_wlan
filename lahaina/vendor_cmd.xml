@@ -881,6 +881,20 @@
 	</VendorCmd>
 	<!-- QCA_NL80211_VENDOR_SUBCMD_NAN_EXT = 171 -->
 	<!-- QCA_NL80211_VENDOR_SUBCMD_PEER_CFR_CAPTURE_CFG = 173 -->
+	<VendorCmd name="CFR_CAPTURE_CFG" ID="173">
+		<Attribute name="CFR_VERSION," ID="7" TYPE="U8"/>
+		<Attribute name="CFR_ENABLE" ID="2" TYPE="FLAG"/>
+		<Attribute name="CFR_ENABLE_GROUP_BITMAP" ID="8" TYPE="U32"/>
+		<Attribute name="CFR_CAPTURE_TYPE" ID="11" TYPE="U32"/>
+		<Attribute name="CFR_GROUP_TABLE" ID="14" TYPE="NESTED" ATTR_MAX="25">
+			<Attribute name="CFR_GROUP_ENTRY" ID="15" TYPE="NESTED" ATTR_MAX="25">
+				<Attribute name="CFR_GROUP_NUMBER" ID="16" TYPE="u32"/>
+				<Attribute name="CFR_GROUP_MGMT_FILTER" ID="23" TYPE="u32"/>
+				<Attribute name="CFR_GROUP_TA" ID="17" TYPE="mac_addr"/>
+				<Attribute name="CFR_GROUP_TA_MASK" ID="19" TYPE="mac_addr"/>
+			</Attribute>
+		</Attribute>
+	</VendorCmd>
 	<!-- QCA_NL80211_VENDOR_SUBCMD_THROUGHPUT_CHANGE_EVENT = 174 -->
 	<!-- QCA_NL80211_VENDOR_SUBCMD_COEX_CONFIG = 175 -->
 	<!-- QCA_NL80211_VENDOR_SUBCMD_GET_FW_STATE = 177 -->
