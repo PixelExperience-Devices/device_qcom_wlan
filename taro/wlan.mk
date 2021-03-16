@@ -21,6 +21,9 @@ TARGET_WLAN_CHIP := qca6490
 
 WLAN_CHIPSET := qca_cld3
 
+# Force chip-specific DLKM name
+TARGET_MULTI_WLAN := true
+
 #WPA
 WPA := wpa_cli
 
