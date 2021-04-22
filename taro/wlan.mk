@@ -77,7 +77,6 @@ QC_WIFI_HIDL_FEATURE_DUAL_STA := true
 #Disable DMS MAC address feature in cnss-daemon
 TARGET_USES_NO_DMS_QMI_CLIENT := true
 
-TARGET_USES_GKI_BUILD := true
 
 ifneq ($(TARGET_WLAN_CHIP),)
 
