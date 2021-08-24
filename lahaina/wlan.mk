@@ -7,6 +7,7 @@ WLAN_CHIPSET := qca_cld3
 WPA := wpa_cli
 
 PRODUCT_PACKAGES += wifilearner
+PRODUCT_PACKAGES += dppdaemon
 PRODUCT_PACKAGES += $(WPA)
 PRODUCT_PACKAGES += lowirpcd
 PRODUCT_PACKAGES += qsh_wifi_test
