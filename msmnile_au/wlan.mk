@@ -1,5 +1,7 @@
 WLAN_CHIPSET := qca_cld3
-PRODUCT_PACKAGES += wifilearner
+
+#Remove wifilearner from automotive
+#PRODUCT_PACKAGES += wifilearner
 
 #Enable WIFI AWARE FEATURE
 WIFI_HIDL_FEATURE_AWARE := true
