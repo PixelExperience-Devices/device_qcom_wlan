@@ -39,6 +39,7 @@ PRODUCT_PACKAGES += lowirpcd
 PRODUCT_PACKAGES += qsh_wifi_test
 PRODUCT_PACKAGES += init.vendor.wlan.rc
 PRODUCT_PACKAGES += wificfrtool
+PRODUCT_PACKAGES += ctrlapp_dut
 
 #Enable WIFI AWARE FEATURE
 WIFI_HIDL_FEATURE_AWARE := true
