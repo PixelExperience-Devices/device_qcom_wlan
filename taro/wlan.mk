@@ -17,7 +17,7 @@
 #	WCNSS_qcom_cfg_qca6390.ini -> qca6390/WCNSS_qcom_cfg.ing
 #
 #
-TARGET_WLAN_CHIP := qca6490
+TARGET_WLAN_CHIP := qca6490 qca6750
 
 WLAN_CHIPSET := qca_cld3
 
@@ -39,6 +39,7 @@ PRODUCT_PACKAGES += lowirpcd
 PRODUCT_PACKAGES += qsh_wifi_test
 PRODUCT_PACKAGES += init.vendor.wlan.rc
 PRODUCT_PACKAGES += wificfrtool
+PRODUCT_PACKAGES += ctrlapp_dut
 
 #Enable WIFI AWARE FEATURE
 WIFI_HIDL_FEATURE_AWARE := true
