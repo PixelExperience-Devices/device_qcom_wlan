@@ -17,7 +17,7 @@
 #	WCNSS_qcom_cfg_qca6390.ini -> qca6390/WCNSS_qcom_cfg.ini
 #
 #
-TARGET_WLAN_CHIP := wcn7850
+TARGET_WLAN_CHIP := kiwi
 
 WLAN_CHIPSET := qca_cld3
 
