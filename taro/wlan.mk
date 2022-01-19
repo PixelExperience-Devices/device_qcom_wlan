@@ -83,6 +83,8 @@ TARGET_USES_NO_FW_QMI_CLIENT := true
 #Disable DMS MAC address feature in cnss-daemon
 TARGET_USES_NO_DMS_QMI_CLIENT := true
 
+# Enable Passphrase to PMK calculation in WiFiHal for NAN feature
+TARGET_USES_WIFI_HAL_CRYPTO_API := true
 
 ifneq ($(TARGET_WLAN_CHIP),)
 
