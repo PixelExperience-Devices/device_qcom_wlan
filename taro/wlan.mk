@@ -96,3 +96,6 @@ ifneq ($(TARGET_WLAN_CHIP),)
 
 	WLAN_KBUILD_OPTIONS_qca6490 := CONFIG_CNSS_QCA6490=y
 endif
+
+# Enable q5drv
+PRODUCT_PACKAGES_DEBUG += q5drv_linux.ko
