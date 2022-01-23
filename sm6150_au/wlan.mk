@@ -6,6 +6,9 @@ PRODUCT_PACKAGES += \
 	wificond \
 	wifilogd
 
+#Disable CNSS_CLI
+TARGET_NO_USE_CNSS_CLI := true
+
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.wifi.aware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.aware.xml \
 	frameworks/native/data/etc/android.hardware.wifi.rtt.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.rtt.xml \
@@ -41,7 +44,8 @@ endif
 # AOSP: interface combinations
 WIFI_HAL_INTERFACE_COMBINATIONS := {{{STA}, 1}, {{AP}, 1}, {{P2P}, 1}},\
                                    {{{STA}, 1}, {{NAN}, 1}}, \
-                                   {{{STA}, 2}, {{AP}, 1}}
+                                   {{{STA}, 2}, {{AP}, 1}}, \
+                                   {{{STA}, 1}, {{AP}, 2}}
 
 # Override WLAN configurations
 # # Usage:
