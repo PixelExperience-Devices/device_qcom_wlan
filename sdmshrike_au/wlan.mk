@@ -40,6 +40,8 @@ PRODUCT_COPY_FILES += \
     device/qcom/wlan/msmnile_au/init.qcom.wlan.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.wlan.sh
 endif
 
+PRODUCT_PACKAGES += ctrlapp_dut
+
 ifeq ($(TARGET_USES_AOSP_FOR_WLAN), true)
 # Pure AOSP: Use pre-defined interface combinations with STA+SAP support
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
