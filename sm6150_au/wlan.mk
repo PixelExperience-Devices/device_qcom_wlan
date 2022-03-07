@@ -41,6 +41,8 @@ PRODUCT_COPY_FILES += \
     device/qcom/wlan/sm6150_au/init.qcom.wlan.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.wlan.sh
 endif
 
+PRODUCT_PACKAGES += ctrlapp_dut
+
 # AOSP: interface combinations
 WIFI_HAL_INTERFACE_COMBINATIONS := {{{STA}, 1}, {{AP}, 1}, {{P2P}, 1}},\
                                    {{{STA}, 1}, {{NAN}, 1}}, \
