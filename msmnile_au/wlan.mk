@@ -6,6 +6,9 @@ WLAN_CHIPSET := qca_cld3
 #Enable WIFI AWARE FEATURE
 WIFI_HIDL_FEATURE_AWARE := true
 
+#Enable rc file from wpa_supplicant project
+WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
+
 #Disable CNSS_CLI
 TARGET_NO_USE_CNSS_CLI := true
 

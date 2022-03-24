@@ -6,6 +6,9 @@ WLAN_CHIPSET := qca_cld3
 #Enable WIFI AWARE FEATURE
 WIFI_HIDL_FEATURE_AWARE := true
 
+#Enable rc file from wpa_supplicant project
+WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
+
 PRODUCT_COPY_FILES += \
 	device/qcom/wlan/msmnile_au/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
 	device/qcom/wlan/msmnile_au/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
