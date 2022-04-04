@@ -17,7 +17,7 @@
 #	WCNSS_qcom_cfg_qca6390.ini -> qca6390/WCNSS_qcom_cfg.ing
 #
 #
-TARGET_WLAN_CHIP := qca6490
+TARGET_WLAN_CHIP := kiwi kiwi_v2
 
 WLAN_CHIPSET := qca_cld3
 
@@ -40,6 +40,7 @@ PRODUCT_PACKAGES += qsh_wifi_test
 PRODUCT_PACKAGES += init.vendor.wlan.rc
 PRODUCT_PACKAGES += wificfrtool
 PRODUCT_PACKAGES += ctrlapp_dut
+PRODUCT_PACKAGES += wifimyftm
 
 #Enable WIFI AWARE FEATURE
 WIFI_HIDL_FEATURE_AWARE := true
@@ -93,6 +94,7 @@ ifneq ($(TARGET_WLAN_CHIP),)
 	# configuration per build.
 	#
 	# e.g WLAN_KBUILD_OPTIONS_qca6490 := CONFIG_CNSS_QCA6490=y
-
-	WLAN_KBUILD_OPTIONS_qca6490 := CONFIG_CNSS_QCA6490=y
 endif
+
+# Enable q5drv
+PRODUCT_PACKAGES_DEBUG += q5drv_linux.ko
