@@ -31,3 +31,9 @@ QC_WIFI_HIDL_FEATURE_DUAL_AP := true
 # Enable vendor properties.
 PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.aware.interface=wifi-aware0
+# Inject Kbuild options per chip
+#
+# Select proper chip configuration for building WLAN driver module. Currently
+# driver supports only one chip configuration per build.
+#
+WLAN_KBUILD_OPTIONS_wlan := CONFIG_CNSS_SM6150=y
