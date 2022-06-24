@@ -6,6 +6,9 @@ WLAN_CHIPSET := qca_cld3
 #Enable WIFI AWARE FEATURE
 WIFI_HIDL_FEATURE_AWARE := true
 
+#Enable rc file from wpa_supplicant project
+WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
+
 #Disable CNSS_CLI
 TARGET_NO_USE_CNSS_CLI := true
 
@@ -23,7 +26,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_WLAN_DRIVER_ALWAYS_LOADED := true
 
 # WLAN driver configuration file
-ifeq ($(strip $(shell expr $(words $(strip $(TARGET_WLAN_CHIP))) \>= 2)), 1)
+ifeq ($(strip $(shell expr $(words $(strip $(TARGET_WLAN_CHIP))) \>= 1)), 1)
 PRODUCT_COPY_FILES += \
 $(foreach chip, $(TARGET_WLAN_CHIP), \
     device/qcom/wlan/msmnile_au/WCNSS_qcom_cfg_$(chip).ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/$(chip)/WCNSS_qcom_cfg.ini)
@@ -77,3 +80,6 @@ WLAN_CFG_OVERRIDE_qcn7605 := CONFIG_FEATURE_COEX=y CONFIG_QCACLD_FEATURE_BTC_CHA
 WLAN_CFG_OVERRIDE_qca6490 := CONFIG_FEATURE_COEX=y CONFIG_QCACLD_FEATURE_BTC_CHAIN_MODE=y
 
 WLAN_KBUILD_OPTIONS_qca6490 := CONFIG_CNSS_QCA6490=y
+
+#Disable DMS MAC address feature in cnss-daemon
+TARGET_USES_NO_DMS_QMI_CLIENT := true

@@ -9,6 +9,9 @@ PRODUCT_PACKAGES += \
 #Disable CNSS_CLI
 TARGET_NO_USE_CNSS_CLI := true
 
+#Enable rc file from wpa_supplicant project
+WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
+
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.wifi.aware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.aware.xml \
 	frameworks/native/data/etc/android.hardware.wifi.rtt.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.rtt.xml \
@@ -60,3 +63,6 @@ WLAN_CFG_OVERRIDE_qcn7605 := CONFIG_FEATURE_COEX=y CONFIG_QCACLD_FEATURE_BTC_CHA
 # Enable vendor properties.
 PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.aware.interface=wifi-aware0
+
+#Disable DMS MAC address feature in cnss-daemon
+TARGET_USES_NO_DMS_QMI_CLIENT := true

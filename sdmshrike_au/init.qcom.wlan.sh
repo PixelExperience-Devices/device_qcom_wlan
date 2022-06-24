@@ -29,16 +29,16 @@
 #
 
 if [ ! -f /vendor/lib/modules/qca_cld3_wlan.ko ]; then
-	if lspci -k |grep cnss_pci|grep ":1100";then
+	if lspci -kn |grep cnss_pci|grep ":1100";then
 		setprop ro.vendor.wlan.chip qca6290
-	elif lspci -k |grep cnss_pci|grep ":003e";then
+	elif lspci -kn |grep cnss_pci|grep ":003e";then
 		setprop ro.vendor.wlan.chip qca6174
 		setprop ro.vendor.wlan.aware false
 		setprop ro.vendor.wlan.11ax false
 		setprop ro.vendor.wlan.sta_plus_sta false
-	elif lspci -k |grep cnss_pci|grep ":1101";then
+	elif lspci -kn |grep cnss_pci|grep ":1101";then
 		setprop ro.vendor.wlan.chip qca6390
-	elif lspci -k |grep cnss_pci|grep ":1102";then
+	elif lspci -kn |grep cnss_pci|grep ":1102";then
 		setprop ro.vendor.wlan.chip qcn7605
 		setprop ro.vendor.wlan.apf false
 		setprop ro.vendor.wlan.11ax false
