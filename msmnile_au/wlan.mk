@@ -26,7 +26,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_WLAN_DRIVER_ALWAYS_LOADED := true
 
 # WLAN driver configuration file
-ifeq ($(strip $(shell expr $(words $(strip $(TARGET_WLAN_CHIP))) \>= 2)), 1)
+ifeq ($(strip $(shell expr $(words $(strip $(TARGET_WLAN_CHIP))) \>= 1)), 1)
 PRODUCT_COPY_FILES += \
 $(foreach chip, $(TARGET_WLAN_CHIP), \
     device/qcom/wlan/msmnile_au/WCNSS_qcom_cfg_$(chip).ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/$(chip)/WCNSS_qcom_cfg.ini)
