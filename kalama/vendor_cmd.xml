@@ -389,6 +389,19 @@
 		<Attribute name="CONFIG_TX_STBC" ID="68" TYPE="u8"/>
 		<Attribute name="CONFIG_RX_STBC" ID="69" TYPE="u8"/>
 		<Attribute name="CONFIG_NSS" ID="70" TYPE="u8"/>
+		<Attribute name="CONFIG_OPTIMIZED_POWER_MANAGEMENT" ID="71" TYPE="u8"/>
+		<Attribute name="CONFIG_UDP_QOS_UPGRADE" ID="72" TYPE="u8"/>
+		<Attribute name="CONFIG_NUM_TX_CHAINS" ID="73" TYPE="u8"/>
+		<Attribute name="CONFIG_NUM_RX_CHAINS" ID="74" TYPE="u8"/>
+		<Attribute name="CONFIG_ANI_SETTING" ID="75" TYPE="u8"/>
+		<Attribute name="CONFIG_ANI_LEVEL" ID="76" TYPE="u32"/>
+		<Attribute name="CONFIG_TX_NSS" ID="77" TYPE="u8"/>
+		<Attribute name="CONFIG_RX_NSS" ID="78" TYPE="u8"/>
+		<Attribute name="CONFIG_CONCURRENT_STA_PRIMARY" ID="79" TYPE="u8"/>
+		<Attribute name="CONFIG_FT_OVER_DS" ID="80" TYPE="u8"/>
+		<Attribute name="CONFIG_ARP_NS_OFFLOAD" ID="81" TYPE="u8"/>
+		<Attribute name="CONFIG_AUDIO_DATA_PATH" ID="82" TYPE="u8"/>
+		<Attribute name="CONFIG_DBAM" ID="83" TYPE="u8"/>
 	</VendorCmd>
 	<!-- QCA_NL80211_VENDOR_SUBCMD_GET_WIFI_CONFIGURATION = 75 -->
 	<VendorCmd name="GET_WIFI_CONFIG" ID="75">
