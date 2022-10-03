@@ -17,7 +17,7 @@
 #	WCNSS_qcom_cfg_qca6390.ini -> qca6390/WCNSS_qcom_cfg.ing
 #
 #
-TARGET_WLAN_CHIP := qca6490
+TARGET_WLAN_CHIP := qca6490 kiwi_v2
 
 WLAN_CHIPSET := qca_cld3
 
@@ -41,6 +41,7 @@ PRODUCT_PACKAGES += init.vendor.wlan.rc
 PRODUCT_PACKAGES += wificfrtool
 PRODUCT_PACKAGES += ctrlapp_dut
 PRODUCT_PACKAGES += wifimyftm
+PRODUCT_PACKAGES += libwpa_drv_oem_hmd
 
 #Enable WIFI AWARE FEATURE
 WIFI_HIDL_FEATURE_AWARE := true
