@@ -17,7 +17,7 @@
 #	WCNSS_qcom_cfg_qca6390.ini -> qca6390/WCNSS_qcom_cfg.ing
 #
 #
-TARGET_WLAN_CHIP := qca6750 adrastea
+TARGET_WLAN_CHIP := qca6750 adrastea qca6490
 
 WLAN_CHIPSET := qca_cld3
 
