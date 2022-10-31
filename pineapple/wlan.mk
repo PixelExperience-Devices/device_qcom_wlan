@@ -7,18 +7,17 @@
 #
 # It also installs chip specific INI files.
 #
-# e.g. TARGET_WLAN_CHIP := kiwi_v2 mango
-#	builds qca_cld3_kiwi_v2.ko and qca_cld3_mango.ko
+# e.g. TARGET_WLAN_CHIP := kiwi_v2
+#	builds qca_cld3_kiwi_v2.ko
 #
 #	Copies configuration files from device/qcom/wlan/pineapple/ to
 #	$(TARGET_COPY_OUT_VENDOR)/etc/wifi/ like,
 #
 #	WCNSS_qcom_cfg_kiwi_v2.ini -> kiwi_v2/WCNSS_qcom_cfg.ini
-#	WCNSS_qcom_cfg_mango.ini -> mango/WCNSS_qcom_cfg.ini
 #
 #
 
-TARGET_WLAN_CHIP := kiwi_v2 mango
+TARGET_WLAN_CHIP := kiwi_v2
 
 WLAN_CHIPSET := qca_cld3
 
@@ -36,7 +35,7 @@ else
 endif
 PRODUCT_PACKAGES += wifilearner
 PRODUCT_PACKAGES += $(WPA)
-PRODUCT_PACKAGES += qsh_wifi_test
+#PRODUCT_PACKAGES += qsh_wifi_test
 PRODUCT_PACKAGES += init.vendor.wlan.rc
 PRODUCT_PACKAGES += wificfrtool
 PRODUCT_PACKAGES += ctrlapp_dut
