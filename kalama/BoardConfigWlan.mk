@@ -1,15 +1,16 @@
+ifeq ($(call is-board-platform-in-list,$(TARGET_BOARD_PLATFORM)),true)
 ifneq ($(TARGET_WLAN_CHIP),)
 	BOARD_VENDOR_KERNEL_MODULES += $(foreach chip, $(TARGET_WLAN_CHIP), $(KERNEL_MODULES_OUT)/$(WLAN_CHIPSET)_$(chip).ko)
 else
 	BOARD_VENDOR_KERNEL_MODULES += $(KERNEL_MODULES_OUT)/qca_cld3_wlan.ko
-endif
-
+endif # TARGET_WLAN_CHIP
 BOARD_VENDOR_KERNEL_MODULES += $(KERNEL_MODULES_OUT)/cnss2.ko
 BOARD_VENDOR_KERNEL_MODULES += $(KERNEL_MODULES_OUT)/cnss_plat_ipc_qmi_svc.ko
 BOARD_VENDOR_KERNEL_MODULES += $(KERNEL_MODULES_OUT)/wlan_firmware_service.ko
 BOARD_VENDOR_KERNEL_MODULES += $(KERNEL_MODULES_OUT)/cnss_nl.ko
 BOARD_VENDOR_KERNEL_MODULES += $(KERNEL_MODULES_OUT)/cnss_prealloc.ko
 BOARD_VENDOR_KERNEL_MODULES += $(KERNEL_MODULES_OUT)/cnss_utils.ko
+endif # is-board-platform-in-list
 
 WIFI_DRIVER_STATE_CTRL_PARAM := "/dev/wlan"
 WIFI_DRIVER_STATE_ON := "ON"
