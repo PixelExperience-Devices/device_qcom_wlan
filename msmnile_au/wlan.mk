@@ -86,3 +86,6 @@ WLAN_KBUILD_OPTIONS_qca6490 := CONFIG_CNSS_QCA6490=y
 
 #Disable DMS MAC address feature in cnss-daemon
 TARGET_USES_NO_DMS_QMI_CLIENT := true
+
+#Clear wlan fw cal file on start up
+TARGET_CAL_DATA_CLEAR := true
