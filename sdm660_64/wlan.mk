@@ -9,6 +9,7 @@ PRODUCT_PACKAGES += \
         wifilogd \
         wifilearner
 PRODUCT_PACKAGES += $(WPA)
+PRODUCT_PACKAGES += ctrlapp_dut
 
 PRODUCT_COPY_FILES += \
 	device/qcom/wlan/sdm660_64/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
