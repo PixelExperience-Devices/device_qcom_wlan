@@ -82,3 +82,6 @@ TARGET_USES_NO_FW_QMI_CLIENT := true
 
 #Disable DMS MAC address feature in cnss-daemon
 TARGET_USES_NO_DMS_QMI_CLIENT := true
+
+#Disable subnet detection
+TARGET_USES_NO_SUBNET_DETECTION := true
