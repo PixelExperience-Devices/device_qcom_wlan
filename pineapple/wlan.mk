@@ -39,8 +39,38 @@ WLAN_MODULES_VENDOR += wifilearner
 WLAN_MODULES_VENDOR += init.vendor.wlan.rc
 WLAN_MODULES_VENDOR += wificfrtool
 WLAN_MODULES_VENDOR += ctrlapp_dut
+WLAN_MODULES_VENDOR += libwpa_drv_oem
 WLAN_MODULES_VENDOR += libwpa_drv_oem_hmd
+WLAN_MODULES_VENDOR += libtcmd
+WLAN_MODULES_VENDOR += libtestcmd6174
+WLAN_MODULES_VENDOR += libtlvutil
+WLAN_MODULES_VENDOR += libtlv2
+WLAN_MODULES_VENDOR += libdpp_manager
+WLAN_MODULES_VENDOR += dppdaemon
 WLAN_MODULES_VENDOR += wifimyftm
+WLAN_MODULES_VENDOR += myftm
+WLAN_MODULES_VENDOR += ftmdaemon
+WLAN_MODULES_VENDOR += wdsdaemon
+WLAN_MODULES_VENDOR += athdiag
+WLAN_MODULES_VENDOR += cnss_diag
+WLAN_MODULES_VENDOR += vendor_cmd_tool
+WLAN_MODULES_VENDOR += hal_proxy_daemon
+WLAN_MODULES_VENDOR += spectraltool
+WLAN_MODULES_VENDOR += sigma_dut
+WLAN_MODULES_VENDOR += e_loop
+WLAN_MODULES_VENDOR += cnss-daemon
+WLAN_MODULES_VENDOR += cnss_cli
+WLAN_MODULES_VENDOR += pktlogconf
+WLAN_MODULES_VENDOR += libcld80211
+WLAN_MODULES_VENDOR += libwifi-hal-ctrl
+WLAN_MODULES_VENDOR += libwifi-hal-qcom
+WLAN_MODULES_VENDOR += libwifi-hal
+WLAN_MODULES_VENDOR += lib_driver_cmd_qcwcn
+WLAN_MODULES_VENDOR += libwpa_client
+WLAN_MODULES_VENDOR += wpa_supplicant
+WLAN_MODULES_VENDOR += hostapd
+WLAN_MODULES_VENDOR += hostapd_cli
+WLAN_MODULES_VENDOR += hs20-osu-client
 
 #Enable WIFI AWARE FEATURE
 WIFI_HIDL_FEATURE_AWARE := true
@@ -59,7 +89,6 @@ endif
 PRODUCT_COPY_FILES += \
 				device/qcom/wlan/pineapple/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
 				device/qcom/wlan/pineapple/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
-				device/qcom/wlan/pineapple/icm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/icm.conf \
 				device/qcom/wlan/pineapple/vendor_cmd.xml:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/vendor_cmd.xml \
                                 frameworks/native/data/etc/android.hardware.wifi.aware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.aware.xml \
                                 frameworks/native/data/etc/android.hardware.wifi.rtt.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.rtt.xml \
