@@ -895,6 +895,41 @@
 			<Attribute name="HE_OMI_ULMU_DATA_DISABLE" ID="5" TYPE="u8"/>
 		</Attribute>
 		<Attribute name="HE_HTC_HE_SUPP" ID="34" TYPE="u8"/>
+		<Attribute name="ENABLE_2G_VHT" ID="35" TYPE="u8"/>
+		<Attribute name="SET_HE_TESTBED_DEFAULTS" ID="36" TYPE="u8"/>
+		<Attribute name="HE_TWT_REQ_SUPPORT" ID="37" TYPE="u8"/>
+		<Attribute name="PMF_PROTECTION" ID="38" TYPE="u8"/>
+		<Attribute name="DISASSOC_TX" ID="39" TYPE="blob" LENGTH="1"/>
+		<Attribute name="FT_REASSOCREQ_RSNXE_USED" ID="40" TYPE="u8"/>
+		<Attribute name="CONFIG_IGNORE_CSA" ID="41" TYPE="u8"/>
+		<Attribute name="OCI_OVERRIDE" ID="42" TYPE="NESTED">
+			<Attribute name="OCI_OVERRIDE_FRAME_TYPE" ID="1" TYPE="u8"/>
+			<Attribute name="OCI_OVERRIDE_FREQUENCY" ID="2" TYPE="u32"/>
+		</Attribute>
+		<Attribute name="IGNORE_SA_QUERY_TIMEOUT" ID="43" TYPE="u8"/>
+		<Attribute name="FILS_DISCOVERY_FRAMES_TX" ID="44" TYPE="u8"/>
+		<Attribute name="FULL_BW_UL_MU_MIMO" ID="45" TYPE="u8"/>
+		<Attribute name="BSS_MAX_IDLE_PERIOD" ID="46" TYPE="u16"/>
+		<Attribute name="RU_242_TONE_TX" ID="47" TYPE="u8"/>
+		<Attribute name="DISABLE_DATA_MGMT_RSP_TX" ID="48" TYPE="u8"/>
+		<Attribute name="PUNCTURED_PREAMBLE_RX" ID="49" TYPE="u8"/>
+		<Attribute name="IGNORE_H2E_RSNXE" ID="50" TYPE="u8"/>
+		<Attribute name="6GHZ_SECURITY_TEST_MODE" ID="51" TYPE="u8"/>
+		<Attribute name="ER_SU_PPDU_TYPE" ID="52" TYPE="u8"/>
+		<Attribute name="KEEP_ALIVE_FRAME_TYPE" ID="53" TYPE="u8"/>
+		<Attribute name="USE_BSSID_IN_PROBE_REQ_RA" ID="54" TYPE="u8"/>
+		<Attribute name="BSS_MAX_IDLE_PERIOD_ENABLE" ID="55" TYPE="u8"/>
+		<Attribute name="RX_CTRL_FRAME_TO_MBSS" ID="56" TYPE="u8"/>
+		<Attribute name="BCAST_TWT_SUPPORT" ID="57" TYPE="u8"/>
+		<Attribute name="11BE_EMLSR_MODE" ID="58" TYPE="u8"/>
+		<Attribute name="BEAMFORMER_PERIODIC_SOUNDING" ID="59" TYPE="u8"/>
+		<Attribute name="EHT_BEAMFORMEE_SS_80MHZ" ID="60" TYPE="u8"/>
+		<Attribute name="EHT_BEAMFORMEE_SS_160MHZ" ID="61" TYPE="u8"/>
+		<Attribute name="EHT_BEAMFORMEE_SS_320MHZ" ID="62" TYPE="u8"/>
+		<Attribute name="EXCLUDE_STA_PROF_IN_PROBE_REQ" ID="63" TYPE="u8"/>
+		<Attribute name="SET_EHT_TESTBED_DEFAULTS" ID="64" TYPE="u8"/>
+		<Attribute name="EHT_MCS" ID="65" TYPE="u8"/>
+		<Attribute name="EHT_TB_SOUNDING_FB_RL" ID="66" TYPE="u8"/>
 	</VendorCmd>
 	<!-- QCA_NL80211_VENDOR_SUBCMD_NAN_EXT = 171 -->
 	<!-- QCA_NL80211_VENDOR_SUBCMD_PEER_CFR_CAPTURE_CFG = 173 -->
