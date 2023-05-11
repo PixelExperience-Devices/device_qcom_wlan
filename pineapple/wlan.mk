@@ -35,7 +35,7 @@ else
 	WLAN_MODULES_VENDOR += $(WLAN_CHIPSET)_wlan.ko
 endif
 WLAN_MODULES_VENDOR += wifilearner
-#WLAN_MODULES_VENDOR += qsh_wifi_test
+WLAN_MODULES_VENDOR += qsh_wifi_test
 WLAN_MODULES_VENDOR += init.vendor.wlan.rc
 WLAN_MODULES_VENDOR += wificfrtool
 WLAN_MODULES_VENDOR += ctrlapp_dut
