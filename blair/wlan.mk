@@ -8,7 +8,7 @@ WPA := wpa_cli
 WLAN_MODULES_VENDOR := $(WPA)
 
 WLAN_MODULES_VENDOR += wifilearner
-WLAN_MODULES_VENDOR += qsh_wifi_test
+#WLAN_MODULES_VENDOR += qsh_wifi_test
 WLAN_MODULES_VENDOR += init.vendor.wlan.rc
 WLAN_MODULES_VENDOR += wificfrtool
 WLAN_MODULES_VENDOR += ctrlapp_dut
