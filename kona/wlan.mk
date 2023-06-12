@@ -30,6 +30,21 @@ QC_WIFI_HIDL_FEATURE_DUAL_AP := true
 PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.aware.interface=wifi-aware0
 
+ifeq ($(TARGET_KERNEL_VERSION), 5.15)
+WLAN_PLATFORM_KBUILD_OPTIONS := CONFIG_CNSS_OUT_OF_TREE=y CONFIG_CNSS2=m \
+				CONFIG_CNSS2_QMI=y CONFIG_CNSS_QMI_SVC=m \
+				CONFIG_CNSS_PLAT_IPC_QMI_SVC=m \
+				CONFIG_CNSS_GENL=m CONFIG_WCNSS_MEM_PRE_ALLOC=m \
+				CONFIG_CNSS_UTILS=m CONFIG_BUS_AUTO_SUSPEND=y
+
+PRODUCT_PACKAGES += cnss2.ko
+PRODUCT_PACKAGES += cnss_plat_ipc_qmi_svc.ko
+PRODUCT_PACKAGES += wlan_firmware_service.ko
+PRODUCT_PACKAGES += cnss_nl.ko
+PRODUCT_PACKAGES += cnss_prealloc.ko
+PRODUCT_PACKAGES += cnss_utils.ko
+endif
+
 ######## For multiple ko support ########
 
 # WLAN driver configuration file
