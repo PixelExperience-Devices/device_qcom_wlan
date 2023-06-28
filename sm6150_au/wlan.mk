@@ -46,6 +46,19 @@ endif
 
 PRODUCT_PACKAGES += ctrlapp_dut
 
+# Wlan platform driver(cnss2) configs
+WLAN_PLATFORM_KBUILD_OPTIONS := CONFIG_CNSS_OUT_OF_TREE=y CONFIG_CNSS2=m \
+				CONFIG_CNSS2_QMI=y CONFIG_CNSS_QMI_SVC=m \
+				CONFIG_CNSS_PLAT_IPC_QMI_SVC=m \
+				CONFIG_CNSS_GENL=m CONFIG_CNSS_UTILS=m \
+				CONFIG_CNSS2_CONDITIONAL_POWEROFF=y
+
+PRODUCT_PACKAGES += cnss2.ko
+PRODUCT_PACKAGES += cnss_plat_ipc_qmi_svc.ko
+PRODUCT_PACKAGES += wlan_firmware_service.ko
+PRODUCT_PACKAGES += cnss_nl.ko
+PRODUCT_PACKAGES += cnss_utils.ko
+
 # AOSP: interface combinations
 WIFI_HAL_INTERFACE_COMBINATIONS := {{{STA}, 1}, {{AP}, 1}, {{P2P}, 1}},\
                                    {{{STA}, 1}, {{NAN}, 1}}, \
