@@ -1,5 +1,8 @@
 WLAN_CHIPSET := qca_cld3
 
+# Force chip-specific DLKM name
+TARGET_MULTI_WLAN := true
+
 PRODUCT_PACKAGES += \
 	wpa_supplicant_overlay.conf \
 	p2p_supplicant_overlay.conf \
