@@ -1,5 +1,8 @@
 WLAN_CHIPSET := qca_cld3
 
+# Force chip-specific DLKM name
+TARGET_MULTI_WLAN := true
+
 #Remove wifilearner from automotive
 #PRODUCT_PACKAGES += wifilearner
 
