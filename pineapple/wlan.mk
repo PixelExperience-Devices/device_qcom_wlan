@@ -64,7 +64,6 @@ WLAN_MODULES_VENDOR += pktlogconf
 WLAN_MODULES_VENDOR += libcld80211
 WLAN_MODULES_VENDOR += libwifi-hal-ctrl
 WLAN_MODULES_VENDOR += libwifi-hal-qcom
-WLAN_MODULES_VENDOR += libwifi-hal
 WLAN_MODULES_VENDOR += lib_driver_cmd_qcwcn
 WLAN_MODULES_VENDOR += libwpa_client
 WLAN_MODULES_VENDOR += wpa_supplicant
@@ -134,6 +133,7 @@ WLAN_MODULES_VENDOR += cnss_prealloc.ko
 WLAN_MODULES_VENDOR += cnss_utils.ko
 
 PRODUCT_PACKAGES += $(WLAN_MODULES_VENDOR)
+PRODUCT_PACKAGES += libwifi-hal
 
 ifneq ($(TARGET_WLAN_CHIP),)
 
