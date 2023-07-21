@@ -1,5 +1,8 @@
 WLAN_CHIPSET := qca_cld3
 
+# Force chip-specific DLKM name
+TARGET_MULTI_WLAN := true
+
 PRODUCT_PACKAGES += \
 	wpa_supplicant_overlay.conf \
 	p2p_supplicant_overlay.conf \
@@ -24,7 +27,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_WLAN_DRIVER_ALWAYS_LOADED := true
 
 # WLAN driver configuration file
-ifeq ($(strip $(shell expr $(words $(strip $(TARGET_WLAN_CHIP))) \>= 2)), 1)
+ifeq ($(strip $(shell expr $(words $(strip $(TARGET_WLAN_CHIP))) \>= 1)), 1)
 PRODUCT_COPY_FILES += \
 $(foreach chip, $(TARGET_WLAN_CHIP), \
     device/qcom/wlan/sm6150_au/WCNSS_qcom_cfg_$(chip).ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/$(chip)/WCNSS_qcom_cfg.ini)
@@ -45,6 +48,19 @@ PRODUCT_COPY_FILES += \
 endif
 
 PRODUCT_PACKAGES += ctrlapp_dut
+
+# Wlan platform driver(cnss2) configs
+WLAN_PLATFORM_KBUILD_OPTIONS := CONFIG_CNSS_OUT_OF_TREE=y CONFIG_CNSS2=m \
+				CONFIG_CNSS2_QMI=y CONFIG_CNSS_QMI_SVC=m \
+				CONFIG_CNSS_PLAT_IPC_QMI_SVC=m \
+				CONFIG_CNSS_GENL=m CONFIG_CNSS_UTILS=m \
+				CONFIG_CNSS2_CONDITIONAL_POWEROFF=y
+
+PRODUCT_PACKAGES += cnss2.ko
+PRODUCT_PACKAGES += cnss_plat_ipc_qmi_svc.ko
+PRODUCT_PACKAGES += wlan_firmware_service.ko
+PRODUCT_PACKAGES += cnss_nl.ko
+PRODUCT_PACKAGES += cnss_utils.ko
 
 # AOSP: interface combinations
 WIFI_HAL_INTERFACE_COMBINATIONS := {{{STA}, 1}, {{AP}, 1}, {{P2P}, 1}},\
