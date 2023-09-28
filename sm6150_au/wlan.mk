@@ -48,6 +48,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 PRODUCT_PACKAGES += ctrlapp_dut
+PRODUCT_PACKAGES += qtiwifi
 
 # Wlan platform driver(cnss2) configs
 WLAN_PLATFORM_KBUILD_OPTIONS := CONFIG_CNSS_OUT_OF_TREE=y CONFIG_CNSS2=m \
